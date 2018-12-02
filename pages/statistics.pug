@@ -1,5 +1,6 @@
 extends master.pug
 block head
+    link(rel="stylesheet", href="../node_modules/plotly.js/dist/plotly.min.js")
     title Estatísticas
 block content
     div.container-fluid.d-flex
@@ -10,22 +11,32 @@ block content
     div.statistics-local.d-flex.flex-column.align-items-center
         div.d-flex.flex-wrap.justify-content-around
             //- classe comum a todos .graphics
-            div.graphics.border.border-secondary.p-2.mt-2
-                h3.violencia Violência
-                img(src="http://blog.coletum.com/wp-content/uploads/2017/11/grafico-03-300x219.png")
-                img(src="http://blog.coletum.com/wp-content/uploads/2017/11/grafico-03-300x219.png")
-            div.graphics
-                h3.etnia Etnia
-                img(src="http://blog.coletum.com/wp-content/uploads/2017/11/grafico-03-300x219.png")
-            div.graphics
-                h3.idade Idade
-                img(src="http://blog.coletum.com/wp-content/uploads/2017/11/grafico-03-300x219.png")
-            div.graphics
-                h3.renda Renda
-                img(src="http://blog.coletum.com/wp-content/uploads/2017/11/grafico-03-300x219.png")
-            div.graphics
-                h3.renda Renda
-                img(src="http://blog.coletum.com/wp-content/uploads/2017/11/grafico-03-300x219.png")
+            div.graphics.p-2.mt-2.d-flex.flex-wrap
+                div.border.border-secondary
+                    h5 Classe Social
+                    div#classe_social
+                div.border.border-secondary
+                    h5 Etnia
+                    div#etnia
+                div.border.border-secondary
+                    h5 Gênero
+                    div#genero
+                div.border.border-secondary
+                    h5 Idade
+                    div#idade
+                div.border.border-secondary
+                    h5 Violência Física
+                    div#fisica
+                div.border.border-secondary
+                    h5 Violência Material
+                    div#material
+                div.border.border-secondary
+                    h5 Violência Psicológica
+                    div#psicologica
+                div.border.border-secondary
+                    h5 Violência Sexual
+                    div#sexual
+
         hr.w-50
         div.download.d-flex.flex-column
             h4.download-title Você é um 'ciêntista de dados' ou tem interesses? Faça download
@@ -35,3 +46,5 @@ block content
                 label(for="termos") Concordo com os termos acima
             a.btn.btn-primary.w-25.align-self-end(href="#") Baixar
 block foot.sugestion
+block script
+    script(src="../js/statistics.js")

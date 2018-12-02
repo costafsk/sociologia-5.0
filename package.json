@@ -24,6 +24,7 @@
     "mocha": "^5.1.1",
     "node-sass": "^4.9.3",
     "parcel-bundler": "^1.9.7",
+    "plotly.js": "^1.42.5",
     "popper.js": "^1.14.3",
     "pug": "^2.0.3",
     "typescript": "^3.0.3"

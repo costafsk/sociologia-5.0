@@ -1,5 +1,6 @@
 import {firebaseControl} from './firebaseControl.module.js';
 
+const divTitleMapa = document.querySelector('.firstTitle');
 const divMapa = document.querySelector('.mapa');
 const divSelecao = document.querySelector('.selecao');
 const inputs = document.querySelectorAll('.selecao input');
@@ -16,6 +17,7 @@ export const functions = {
     flagForm: 0,
     firstForm: function() {
         divMapa.className = 'd-none';
+        divTitleMapa.className = 'd-none';
         divSelecao.className = 'selecao w-100 d-flex flex-column';
         this.flagForm++;
         firebaseControl.sendMap(this.object);
@@ -86,6 +88,7 @@ export const functions = {
     returnForm: function() {
         if (this.flagForm === 1) {
             divMapa.className = 'd-flex flex-column align-items-center';
+            divTitleMapa.className = '.firstTitle.align-self-start.ml-5.mb-5.mt-5';
             divSelecao.className = 'selecao d-none';
             this.flagForm--;
         } else if (this.flagForm === 2) {
