@@ -1,0 +1,455 @@
+extends master.pug
+block head
+    title Reportagem de casos
+    link(rel="stylesheet" href="../css/report.css")
+block content
+    div.container-fluid.d-flex.flex-column
+        div.d-flex.w-100.align-items-center.mb-3.flex-column
+            h2.align-self-start.ml-5.mb-5.mt-5 Selecione o local:
+            div(style="height:400px").mapa.w-75.m-3
+            form.w-100.d-flex.align-items-center
+                div.selecao
+                    h2.mb-4 Qual tipo de violência você sofreu?
+                    div.list-group
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input#material.tipo_violencia.custom-control-input(
+                                    type="radio", name="tipo", value="material")
+                                label(for="material").title.custom-control-label Material
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input#fisica.tipo_violencia.custom-control-input(
+                                    type="radio", name="tipo", value="fisica")
+                                label(for="fisica").title.custom-control-label Física
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input#sexual.tipo_violencia.custom-control-input(
+                                    type="radio", name="tipo", value="sexual")
+                                label(for="sexual").title.custom-control-label Sexual
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input#psicologica.tipo_violencia.custom-control-input(
+                                    type="radio", name="tipo", value="psicologica")
+                                label(for="psicologica"
+                                    ).title.custom-control-label Psicológia
+
+                div.material.opcoes
+                    h2.mb-4 Qual tipo de violência material você sofreu?
+                    div.list-group
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="material_roubo"
+                                    ).custom-control-input.material#material_roubo
+                                label.custom-control-label(for="material_roubo") Roubo
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="material_tentativa_assalto").custom-control-input.material#material_tentativa_assalto
+                                label.custom-control-label(
+                                    for="material_tentativa_assalto") Tentativa de Assalto
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="material_furto"
+                                    ).custom-control-input.material#material_furto
+                                label.custom-control-label(for="material_furto") Furto
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="material_dano_propriedade"
+                                    ).custom-control-input.material#material_dano_propriedade
+                                label.custom-control-label(
+                                    for="material_dano_propriedade") Dano a Propriedade
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="material_outros"
+                                    ).custom-control-input.material#material_outros
+                                label.custom-control-label(
+                                    for="material_outros") Outros tipos de Violência Material
+                div.fisica.opcoes
+                    h2.mb-4 Qual tipo de violência física você sofreu?
+                    div.list-group
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="fisica_sequestro"
+                                    ).custom-control-input.fisica#fisica_sequestro
+                                label.custom-control-label(for="fisica_sequestro") Sequestro
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="fisica_tentativa_sequestro"
+                                    ).custom-control-input.fisica#fisica_tentativa_sequestro
+                                label.custom-control-label(
+                                    for="fisica_tentativa_sequestro") Tentativa de Sequestro
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="fisica_agressao_fisica"
+                                    ).custom-control-input.fisica#fisica_agressao_fisica
+                                label.custom-control-label(
+                                    for="fisica_agressao_fisica") Agressão Fisíca
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="fisica_agressao_arma_fogo"
+                                    ).custom-control-input.fisica#fisica_agressao_arma_fogo
+                                label.custom-control-label(
+                                    for="fisica_agressao_arma_fogo") Agressão com arma de fogo
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="fisica_agressao_arma_branca"
+                                    ).custom-control-input.fisica#fisica_agressao_arma_branca
+                                label.custom-control-label(
+                                    for="fisica_agressao_arma_branca") Agressão com arma branca
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="fisica_agressao_outros_objetos"
+                                    ).fisica.custom-control-input#fisica_agressao_outros_objetos
+                                label.custom-control-label(
+                                    for="fisica_agressao_outros_objetos") Agressão com outros objetos
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="fisica_assassinato"
+                                    ).custom-control-input.fisica#fisica_assassinato
+                                label.custom-control-label(
+                                    for="fisica_assassinato") Assassinato
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="fisica_tentativa_assassinato").custom-control-input.fisica#fisica_tentativa_assassinato
+                                label.custom-control-label(
+                                    for="fisica_tentativa_assassinato") Tentativa de Assassinato
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="fisica_briga"
+                                    ).custom-control-input.fisica#fisica_briga
+                                label.custom-control-label(
+                                    for="fisica_briga") Briga
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="fisica_carcere_privado"
+                                    ).custom-control-input.fisica#fisica_carcere_privado
+                                label.custom-control-label(
+                                    for="fisica_carcere_privado") Cárcere Privado
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="fisica_tortura"
+                                    ).custom-control-input.fisica#fisica_tortura
+                                label.custom-control-label(for="fisica_tortura") Tortura
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="fisica_outros"
+                                    ).custom-control-input.fisica#fisica_outros
+                                label.custom-control-label(
+                                    for="fisica_outros") Outros tipos de Violência Física
+                div.sexual.opcoes
+                    h2.mb-4 Qual tipo de violência sexual você sofreu?
+                    div.list-group
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="sexual_estupro"
+                                    ).custom-control-input.sexual#sexual_estupro
+                                label.custom-control-label(for="sexual_estupro") Estupro
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="sexual_tentativa_estupro"
+                                    ).custom-control-input.sexual#sexual_tentativa_estupro
+                                label.custom-control-label(
+                                    for="sexual_tentativa_estupro") Tentativa de Estupro
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="sexual_assedio_sexual"
+                                    ).custom-control-input.sexual#sexual_assedio_sexual
+                                label.custom-control-label(
+                                    for="sexual_assedio_sexual") Assédio Sexual
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="sexual_assedio_fisico"
+                                    ).custom-control-input.sexual#sexual_assedio_fisico
+                                label.custom-control-label(
+                                    for="sexual_assedio_fisico") Assédio Físico
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="sexual_assedio_moral"
+                                    ).custom-control-input.sexual#sexual_assedio_moral
+                                label.custom-control-label(
+                                    for="sexual_assedio_moral") Assédio Moral
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="sexual_assedio_verbal"
+                                    ).custom-control-input.sexual#sexual_assedio_verbal
+                                label.custom-control-label(
+                                    for="sexual_assedio_verbal") Assédio Verbal
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="sexual_assassinato"
+                                    ).custom-control-input.sexual#sexual_assassinato
+                                label.custom-control-label(
+                                    for="sexual_assassinato") Assassinato
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="sexual_tentativa_assassinato"
+                                    ).custom-control-input.sexual#sexual_tentativa_assassinato
+                                label.custom-control-label(
+                                    for="sexual_tentativa_assassinato") Tentativa de Assassinato
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="sexual_carcere_privado"
+                                    ).custom-control-input.sexual#sexual_carcere_privado
+                                label.custom-control-label(
+                                    for="sexual_carcere_privado") Cárcere Privado
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="sexual_bullying"
+                                    ).custom-control-input.sexual#sexual_bullying
+                                label.custom-control-label(
+                                    for="sexual_bullying") Bullying/ciberbullying
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="sexual_ameacas"
+                                    ).custom-control-input.sexual#sexual_ameacas
+                                label.custom-control-label(for="sexual_ameacas") Ameaças
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="sexual_tortura"
+                                    ).custom-control-input.sexual#sexual_tortura
+                                label.custom-control-label(for="sexual_tortura") Tortura
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes", value="sexual_outros"
+                                    ).custom-control-input.sexual#sexual_outros
+                                label.custom-control-label(
+                                    for="sexual_outros") Outros tipos de Violência Sexual
+                div.psicologica.opcoes
+                    h2.mb-4 Qual tipo de violência psicológica você sofreu?
+                    div.list-group
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="psicologica_assedio_verbal").custom-control-input.psicologica#psicologica_assedio_verbal
+                                label.custom-control-label(
+                                    for="psicologica_assedio_verbal") Assedio Verbal
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="psicologica_bullying"
+                                    ).custom-control-input.psicologica#psicologica_bullying
+                                label.custom-control-label(
+                                    for="psicologica_bullying") Bullying/ciberbullying
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="psicologica_ameacas"
+                                    ).custom-control-input.psicologica#psicologica_ameacas
+                                label.custom-control-label(
+                                    for="psicologica_ameacas") Ameaças
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="psicologica_tortura_psicologica").custom-control-input.psicologica#psicologica_tortura_psicologica
+                                label.custom-control-label(
+                                    for="psicologica_tortura_psicologica") Tortura Psicológica
+
+                        div.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input(type="radio", name="opcoes",
+                                    value="psicologica_outros"
+                                    ).psicologica#psicologica_outros.custom-control-input
+                                label.custom-control-label(
+                                    for="psicologica_outros") Outros tipos de Violência Psicológica
+
+                div.opcional
+                    div.pergunta.d-none
+                        h4.questao.mb-3 Você se gostaria de responder 4 questões antes de enviar o formulário?
+                        div.btn-group
+                            button#opitional_button_yes.btn.btn-primary Sim
+                            button#opitional_button_no.btn.btn-secondary Não
+                    div.questoes_opcionais.list-group
+                        h4.list-group-item Qual é o seu gênero?
+                        div.genero.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input#genero_masculino.custom-control-input(
+                                    type="radio", name="genero",
+                                    value="genero_masculino")
+                                label.custom-control-label(
+                                    for="genero_masculino") Masculino
+
+                            div.custom-control.custom-radio
+                                input#genero_feminino.custom-control-input(
+                                    type="radio", name="genero", value="genero_feminino")
+                                label.custom-control-label(
+                                    for="genero_feminino") Feminino
+
+                            div.custom-control.custom-radio
+                                input#genero_outro.custom-control-input(
+                                    type="radio", name="genero", value="genero_outro")
+                                label.custom-control-label(for="genero_outro") Outro
+
+                        h4.list-group-item Qual é o sua raça/cor/etnia?
+                        div.etnia.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input#etnia_branco.custom-control-input(
+                                    type="radio", name="etnia", value="etnia_branco")
+                                label.custom-control-label(for="etnia_branco") Branco
+
+                            div.custom-control.custom-radio
+                                input#etnia_negro.custom-control-input(
+                                    type="radio", name="etnia", value="etnia_negro")
+                                label.custom-control-label(for="etnia_negro") Negro
+
+                            div.custom-control.custom-radio
+                                input#etnia_indigena.custom-control-input(
+                                    type="radio", name="etnia",value="etnia_indigena")
+                                label.custom-control-label(for="etnia_indigena") Indígena
+
+                            div.custom-control.custom-radio
+                                input#etnia_pardo.custom-control-input(
+                                    type="radio", name="etnia",value="etnia_pardo")
+                                label.custom-control-label(for="etnia_pardo") Pardo
+
+                            div.custom-control.custom-radio
+                                input#etnia_outro.custom-control-input(
+                                    type="radio", name="etnia",value="etnia_outro")
+                                label.custom-control-label(for="etnia_outro") Outro
+
+                        h4.list-group-item Qual é o sua faixa etária?
+                        div.idade.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input#idade_17.custom-control-input(
+                                    type="radio", name="idade", value="idade_17")
+                                label.custom-control-label(
+                                    for="idade_17") Até 17 anos
+
+                            div.custom-control.custom-radio
+                                input#idade_25.custom-control-input(
+                                    type="radio", name="idade",value="idade_25")
+                                label.custom-control-label(
+                                    for="idade_25") De 18 a 25 anos
+
+                            div.custom-control.custom-radio
+                                input.custom-control-input#idade_35(
+                                    type="radio", name="idade", value="idade_35")
+                                label.custom-control-label(
+                                    for="idade_35") De 25 a 35 anos
+
+                            div.custom-control.custom-radio
+                                input.custom-control-input#idade_45(
+                                    type="radio", name="idade", value="idade_45")
+                                label.custom-control-label(
+                                    for="idade_45") De 36 a 45 anos
+
+                            div.custom-control.custom-radio
+                                input.custom-control-input#idade_55(
+                                    type="radio", name="idade", value="idade_55")
+                                label.custom-control-label(
+                                    for="idade_55") De 46 a 55 anos
+
+                            div.custom-control.custom-radio
+                                input.custom-control-input#idade_70(
+                                    type="radio", name="idade", value="idade_70")
+                                label.custom-control-label(
+                                    for="idade_70") De 56 a 70 anos
+
+                            div.custom-control.custom-radio
+                                input.custom-control-input#idade_71(
+                                    type="radio", name="idade", value="idade_71")
+                                label.custom-control-label(
+                                    for="idade_71") 71 anos ou mais
+
+                        h4.list-group-item Qual é o sua classe social?
+                        div.classe_social.form-check.list-group-item
+                            div.custom-control.custom-radio
+                                input#classe_social_pobre.custom-control-input(
+                                    type="radio", name="classe_social",
+                                    value="classe_social_pobre")
+                                label.custom-control-label(for="classe_social_pobre") Pobre
+
+                            div.custom-control.custom-radio
+                                input#classe_social_media_baixa.custom-control-input(
+                                    type="radio", name="classe_social", value="classe_social_media_baixa")
+                                label.custom-control-label(
+                                    for="classe_social_media_baixa") Classe média baixa
+
+                            div.custom-control.custom-radio
+                                input#classe_social_media.custom-control-input(
+                                    type="radio", name="classe_social",
+                                    value="classe_social_media")
+                                label.custom-control-label(for="classe_social_media") Classe média
+
+                            div.custom-control.custom-radio
+                                input#classe_social_media_alta.custom-control-input(
+                                    type="radio", name="classe_social",
+                                    value="classe_social_media_alta")
+                                label.custom-control-label(
+                                    for="classe_social_media_alta") Classe média alta
+
+                            div.custom-control.custom-radio
+                                input#classe_social_rico.custom-control-input(
+                                    type="radio", name="classe_social",
+                                    value="classe_social_rico")
+                                label.custom-control-label(for="classe_social_rico") Rico
+
+                            div.custom-control.custom-radio
+                                input#classe_social_outro.custom-control-input(
+                                    type="radio", name="classe_social",
+                                    value="classe_social_outro")
+                                label.custom-control-label(for="classe_social_outro") Outro
+        div.btn-group.envia.d-flex.align-self-end
+            button#voltarFormulario.btn.btn-primary Voltar
+            button#enviarFormulario.btn.btn-secondary Enviar
+        div.mensagem.d-none
+            h3 Suas respostas foram enviadas
+            div.mt-3
+                h5.mr-2 Ir para
+                a.btn.btn-secondary.btn-sm.mr-2(href="./index.pug") Página Inicial
+                a.btn.btn-secondary.btn-sm(href="./statistics.pug") Estatísticas
+
+block foot.sugestion
+block script
+    script(src="../js/report.js")
