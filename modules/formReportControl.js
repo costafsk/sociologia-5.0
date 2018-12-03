@@ -6,7 +6,7 @@ const divSelecao = document.querySelector('.selecao');
 const inputs = document.querySelectorAll('.selecao input');
 const divOpcional = document.querySelector('.opcional');
 const divOpcionais = document.querySelector('.questoes_opcionais');
-const buttonEnvia = document.querySelector('button#enviarFormulario');
+const buttonForm = document.querySelector('div#buttonForm');
 const divPergunta = document.querySelector('.pergunta');
 const mensagemFinal = document.querySelector('.mensagem');
 const inputsOpcionais = document.querySelectorAll('.questoes_opcionais input');
@@ -21,9 +21,9 @@ export const functions = {
         divSelecao.className = 'selecao w-100 d-flex flex-column';
         this.flagForm++;
         firebaseControl.sendMap(this.object);
-        // firebaseControl.sendMap(obj);
     },
     secondForm: function() {
+        buttonForm.firstElementChild.className = 'btn btn-primary d-flex';
         for (const input of inputs) {
             if (input.checked) {
                 const value = input.value;
@@ -47,7 +47,7 @@ export const functions = {
                     'pergunta d-flex flex-column align-items-center';
                 divOpcional.className =
                     'opcional w-100 d-flex justify-content-center';
-                buttonEnvia.className = 'd-none';
+                buttonForm.lastElementChild.className = 'd-none';
                 this.object.second = input.value;
                 break;
             }
@@ -55,7 +55,7 @@ export const functions = {
     },
     lastForm: function() {
         divPergunta.className = 'd-none';
-        buttonEnvia.className = 'btn btn-secondary';
+        buttonForm.lastElementChild.className = 'btn btn-secondary';
         divOpcionais.className =
             'd-flex questoes_opcionais w-100 list-group flex-columun';
         this.flagForm++;
@@ -79,7 +79,7 @@ export const functions = {
     },
     sendToFirebase: function() {
         divOpcional.className = 'd-none';
-        buttonEnvia.parentElement.className = 'd-none';
+        buttonForm.className = 'd-none';
         mensagemFinal.className =
             'mensagem d-flex align-items-center flex-column';
         mensagemFinal.children[1].className = 'd-flex';
@@ -88,7 +88,7 @@ export const functions = {
     returnForm: function() {
         if (this.flagForm === 1) {
             divMapa.className = 'd-flex flex-column align-items-center';
-            divTitleMapa.className = '.firstTitle.align-self-start.ml-5.mb-5.mt-5';
+            divTitleMapa.className = 'firstTitle align-self-start ml-5 mb-5 mt-5';
             divSelecao.className = 'selecao d-none';
             this.flagForm--;
         } else if (this.flagForm === 2) {
@@ -100,7 +100,7 @@ export const functions = {
             `${this.object.first} opcoes w-100 d-flex flex-column`;
             divOpcional.className = 'opcional d-none';
             divPergunta.className = 'd-none';
-            buttonEnvia.className = 'btn btn-secondary';
+            buttonForm.lastElementChild.className = 'btn btn-secondary';
             this.flagForm--;
         }
     }

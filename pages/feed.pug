@@ -3,15 +3,16 @@ block head
     link(rel="stylesheet" href="../css/feedPage.css")
     title Feed de Notícias
 block content
-    div.title.container-fluid.d-flex.mt-4.align-items-center.justify-content-around
-        h2.d-flex Feed de Notícias
-        a(href="./report.pug").btn.btn-outline-dark.btn-lg.btn-block.btn-sm.report.mb-5 Reportar
-    div(style="height:400px;").w-75.map.d-flex.mt-5.mb-4
-    hr
-    h2.d-flex.mt-4 Notícias
-    div.rssArea.d-flex.flex-row.w-100.justify-content-center.mt-5
-        div.news
-            //- Para reinderização de rss de noticias externas
+    div.container.d-flex.flex-column
+        div.title.container-fluid.d-flex.mt-4.align-items-center.justify-content-around
+            h2 Feed de Notícias
+            a(href="./report.pug").btn.btn-outline-dark.btn-lg.btn-block.btn-sm.report Reportar
+        div(style="height:400px;").w-75.map.d-flex.mt-5.mb-4.align-self-center
+        hr
+        h2.d-flex.mt-4 Notícias
+        div.rssArea.d-flex.flex-row.w-100.justify-content-center.mt-5
+            div.news
+                //- Para reinderização de rss de noticias externas
 block foot.sugestion
 block script
     script(src="../js/feed.js")
