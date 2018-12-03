@@ -39,49 +39,39 @@ body
     block foot
         footer.d-flex.container-fluid
             div.collaborators.d-flex.flex-column.w-50
-                div.collaborator.d-flex.flex-row
-                    div.icon.d-flex.flex-column.align-content-center
-                        div.person
-                         img(src="../img/pedro.jpeg").icon
-                        div
+                div.collaborator
+                    div.imgName
+                        img(src="../img/pedro.jpeg").icon
                         h5.nameCollaborator Pedro Nunes
                     div.aboutMe
                         p.descriptionCollaborator Estudante do Curso integrado de Informática para Internet.
-                div.collaborator.d-flex.flex-row
-                    div.icon
-                        div.person
-                         img(src="../img/diego.jpeg").icon
-                        div
+                div.collaborator
+                    div.imgName
+                        img(src="../img/diego.jpeg").icon
                         h5.nameCollaborator Diego Costa
                     div.aboutMe
                         p.descriptionCollaborator Estudante do Curso integrado de Informática para Internet.
-                div.collaborator.d-flex.flex-row
-                    div.icon
-                        div.person
-                         img(src="../img/cassiana.jpeg").icon
-                        div
+                div.collaborator
+                    div.imgName
+                        img(src="../img/cassiana.jpeg").icon
                         h5.nameCollaborator Cassiana Silveira
                     div.aboutMe
                         p.descriptionCollaborator Estudante do Curso integrado de Informática para Internet.
-                div.collaborator.d-flex.flex-row
-                    div.icon
-                        div.person
-                         img(src="../img/marcio.jpg").icon
-                        div
+                div.collaborator
+                    div.imgName
+                        img(src="../img/marcio.jpg").icon
                         h5.nameCollaborator Márcio Torres
                     div.aboutMe
-                        p.descriptionCollaborator Professor do Curso integrado de Informática para Internet.
-                div.collaborator.d-flex.flex-row
-                    div.icon
-                        div.person
-                         img(src="../img/dardo.jpeg").icon
-                        div
-                        h5.nameCollaborator Dardo Junior
+                        p.descriptionCollaborator Desenvolvedor de softwares desde a decada de 90 trabalha atualmente como professor no IFRS câmpus Rio Grande.
+                div.collaborator
+                    div.imgName
+                        img(src="../img/dardo.jpeg").icon
+                        h5.nameCollaborator Dardo Bornia
                     div.aboutMe
-                        p.descriptionCollaborator Professor Doutor do Curso integrado de Informática para Internet.
-                div.sugestion.w-50
-                h1.text-dark Sugestões
-                form(action="https://formspree.io/dbo.sociologia2018@gmail.com" method="POST").w-75
+                        p.descriptionCollaborator Professor graduado em Ciências Sociais e doutor em Antropologia, atuante no IFRS câmpus Rio Grande.
+            div.sugestion.w-50
+                h1.text-dark.align-self-start.mb-5 Sugestões
+                form(action="https://formspree.io/dbo.sociologia2018@gmail.com" method="POST")
                     div.form-group
                         label(for="Nome") Nome:
                         input.form-control#name(type="text" name="name" required placeholder="Digite seu nome")

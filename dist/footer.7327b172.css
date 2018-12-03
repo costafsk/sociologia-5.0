@@ -8,12 +8,19 @@ footer {
 }
 
 .sugestion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-left: 1%;
+}
+
+.sugestion > form {
+    width: 90%
 }
 
 .descriptionCollaborator {
     margin-left: 1%;
-    font-size: 0.9em;
+    font-size: 1em;
     color: rgba(0, 0, 0, 0.7);
 }
 
@@ -27,6 +34,11 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.collaborator {
+    display: flex;
+    align-items: center;
 }
 
 .collaborators {
@@ -43,4 +55,18 @@ footer > .collaborators > .collaborator {
 
 footer > .collaborators > .collaborator:not(:last-child) {
     border-bottom: solid 1px rgba(0, 0, 0, 0.4);
+}
+
+.icon {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.imgName {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

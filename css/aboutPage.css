@@ -1,27 +1,26 @@
-.ilustration {
-    border-radius: 100%;
-    background-color: rgba(252, 0, 176, 0.575);
-    width: 100px;
-    height: 100px;
-}
-
-.aboutMe > p.text-center {
-    max-width: 40ch;
-}
-
-.colaborators > h3, .form-group > h1, .description > h2 {
-    color: rgba(20, 20, 20, 0.801);
+.colaborators > h3, .collaborator > h5, .description > h2 {
+    color: rgba(20, 20, 20, 0.945);
     font-weight: bold;
 }
 
-/* .description > p {
-    max-width: 90ch;
-    font-weight: bolder;
-    color: rgba(48, 48, 48, 0.74);
-} */
+.description > p {
+    width: 75%;
+    font-size: 1.2em;
+}
+
 .icon {
     border-radius: 50%;
     width: 200px;
     height: 200px;
 }
 
+.collaborator, .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+.aboutMe > p.text-center {
+    max-width: 40ch;
+}
