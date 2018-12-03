@@ -14,9 +14,14 @@
     font-weight: bold;
 }
 
-.description > p {
+/* .description > p {
     max-width: 90ch;
     font-weight: bolder;
     color: rgba(48, 48, 48, 0.74);
+} */
+.icon {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
 }
 
