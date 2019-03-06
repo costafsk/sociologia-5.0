@@ -1,0 +1,28 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    @media(max-width: 759px) {
+        display: flex;
+        justify-content: center;
+        margin-left: 4%;
+    }
+}
+
+.logo {
+    width: 100px;
+    height: 70px;
+
+}
+
+.title-project, .nav-item    {
+    @media(max-width: 759px) {
+        display: none;
+    }
+}
+
+.carousel, .carousel-item > img, .carousel-item {
+    height: 550px;
+    @media(max-width: 600px) {
+        display: none;
+    }
+}

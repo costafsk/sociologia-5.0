@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-// PWA ?? 
+// Bootstrap Components
+import '../node_modules/jquery/dist/jquery.slim.min.js';
+import '../node_modules/popper.js/dist/popper.min.js';
+
+import './styles/css/master.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
